@@ -21,7 +21,7 @@ Software Engineering - GIU Cairo - Milestone 2
 
 Editable diagram: [erd.drawio](docs/erd.drawio)
 
-![ERD](docs/erd.drawio.png)
+![ERD](docs/erd.drawio.png.png)
 
 ## Traceability: entities to user stories
 
