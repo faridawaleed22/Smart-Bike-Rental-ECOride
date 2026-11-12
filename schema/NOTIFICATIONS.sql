@@ -1,15 +1,4 @@
 
-CREATE TABLE riders (
-    riderID SERIAL PRIMARY KEY,
-    fullName VARCHAR(50)
-);
-
-CREATE TABLE rentals (
-    rentalID SERIAL PRIMARY KEY
-);
-
-
-
 CREATE TABLE notifications (
     notificationID  SERIAL PRIMARY KEY,
 
