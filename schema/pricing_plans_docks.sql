@@ -1,10 +1,10 @@
-CREATE TABLE pricing_plans (
+CREATE TABLE IF NOT EXISTS pricing_plans (
     pricing_id  SERIAL PRIMARY KEY,
     plan_type   VARCHAR(50)    NOT NULL UNIQUE,
     price       DECIMAL(10,2)  NOT NULL CHECK (price >= 0)
 );
 
-CREATE TABLE docks (
+CREATE TABLE IF NOT EXISTS docks (
     dock_id     SERIAL PRIMARY KEY,
     station_id  INT NOT NULL,
     bike_id     INT NULL UNIQUE,
@@ -17,5 +17,13 @@ CREATE TABLE docks (
 
     CONSTRAINT fk_dock_bike
         FOREIGN KEY (bike_id) REFERENCES bikes(bike_id)
-        ON DELETE SET NULL
-);   
+        ON DELETE SET NULL,
+
+    CONSTRAINT chk_dock_bike_status
+        CHECK (
+            (status = 'occupied' AND bike_id IS NOT NULL)
+            OR (status <> 'occupied' AND bike_id IS NULL)
+        )
+);
+
+CREATE INDEX IF NOT EXISTS idx_docks_station_id ON docks(station_id);
