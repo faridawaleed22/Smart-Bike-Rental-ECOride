@@ -1,4 +1,9 @@
+-- Seed data for admins
 
+INSERT INTO admins (fullName, email, password) VALUES
+('Ahmed Hassan', 'ahmed.hassan@example.com', 'admin123'),
+('Sara Mohamed', 'sara.mohamed@example.com', 'admin456'),
+('Omar Khaled', 'omar.khaled@example.com', 'admin789');
 INSERT INTO riders (FullName, email, password, phonenumber, VerificationStatus) VALUES
 ('Ahmed Hassan', 'ahmed@example.com', 'hashed_pw_1', '01012345678', TRUE),
 ('Sara Ali',     'sara@example.com',  'hashed_pw_2', '01123456789', TRUE),
