@@ -1,7 +1,5 @@
 
-CREATE TABLE rentals (
-    rentalID SERIAL PRIMARY KEY
-);
+
 
 CREATE TABLE payments (
     paymentid SERIAL PRIMARY KEY,
