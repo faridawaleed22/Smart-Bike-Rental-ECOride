@@ -14,8 +14,6 @@ INSERT INTO notifications (riderID, rentalID, message, notificationType) VALUES
 (2, NULL, 'Your payment was processed successfully.', 'payment'),
 (3, NULL, 'Your rental is overdue. Please return the bike.', 'penalty');
 
-
-
 INSERT INTO pricing_plans (planType, price) VALUES
   ('Hourly',  20.00),
   ('Daily',   100.00),
