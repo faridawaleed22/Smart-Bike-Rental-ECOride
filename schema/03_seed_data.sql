@@ -19,6 +19,14 @@ INSERT INTO pricing_plans (planType, price) VALUES
   ('Daily',   100.00),
   ('Monthly', 800.00);
 
+INSERT INTO companies (companyName, companyEmail) VALUES
+  ('ECOride Mobility', 'contact@ecoride.example'),
+  ('Cairo Cycle Co.', 'info@cairocycle.example');
+
+INSERT INTO bikes (companyID, QRCODE, Status) VALUES
+  (1, 'ECO-001', 'available'),
+  (2, 'CC-001', 'available');
+
 INSERT INTO docks (stationID, bikeID, status) VALUES
   (1, 1,    'occupied'),
   (1, NULL, 'available'),

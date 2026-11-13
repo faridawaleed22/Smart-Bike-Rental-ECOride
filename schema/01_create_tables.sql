@@ -41,6 +41,22 @@ CREATE TABLE pricing_plans (
     price DECIMAL(10,2) NOT NULL CHECK (price >= 0)
 );
 
+CREATE TABLE companies (
+    companyID SERIAL PRIMARY KEY,
+    companyName VARCHAR(50) NOT NULL,
+    companyEmail VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE bikes (
+    bikeID SERIAL PRIMARY KEY,
+    companyID INT NOT NULL,
+    QRCODE VARCHAR(50) NOT NULL UNIQUE,
+    Status VARCHAR(50) NOT NULL,
+
+    CONSTRAINT fk_bikes_company
+        FOREIGN KEY (companyID) REFERENCES companies(companyID)
+);
+
 
 
 
