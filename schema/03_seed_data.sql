@@ -25,3 +25,11 @@ INSERT INTO docks (stationID, bikeID, status) VALUES
   (1, NULL, 'out_of_service'),
   (2, 2,    'occupied'),
   (2, NULL, 'available');
+  
+INSERT INTO penalties (riderID, AdminID, accountAction, reason)
+VALUES 
+    (3, 1, 'Warning', 'Rental is overdue. Bike was not returned on time.'),
+    (1, 2, 'Fine - 50.00 EGP', 'Bike parked outside of a designated docking station zone.'),
+    (2, 1, 'Fine - 100.00 EGP', 'Bike left unlocked after ending the rental session.'),
+    (3, 3, 'Temporary Suspension (7 Days)', 'Repeated overdue rentals and unverified account status.');
+
