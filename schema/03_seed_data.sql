@@ -23,6 +23,17 @@ INSERT INTO companies (companyName, companyEmail) VALUES
   ('ECOride Mobility', 'contact@ecoride.example'),
   ('Cairo Cycle Co.', 'info@cairocycle.example');
 
+
+-- =========================================
+-- STATIONS SEED DATA
+-- =========================================
+
+INSERT INTO stations (stationName, location, dockCapacity)
+VALUES
+    ('Main Station', 'New Cairo', 20),
+    ('University Station', 'GIU Campus', 15),
+    ('Central Station', 'Downtown Cairo', 30);
+
 INSERT INTO bikes (companyID, QRCODE, Status) VALUES
   (1, 'ECO-001', 'available'),
   (2, 'CC-001', 'available');
