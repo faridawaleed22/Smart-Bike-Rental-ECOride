@@ -73,6 +73,13 @@ CREATE TABLE docks (
 
 
 );
+CREATE TABLE penalties (
+    penattyID INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    riderID INT REFERENCES riders(riderID),
+    AdminID INT REFERENCES admins(AdminID),
+    accountAction VARCHAR(100),
+    reason TEXT
+);
 
 CREATE TABLE payments (
     paymentid SERIAL PRIMARY KEY,
