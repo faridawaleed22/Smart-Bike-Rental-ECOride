@@ -13,3 +13,15 @@ INSERT INTO notifications (riderID, rentalID, message, notificationType) VALUES
 (1, NULL, 'Your rental has started. Enjoy your ride!', 'rental'),
 (2, NULL, 'Your payment was processed successfully.', 'payment'),
 (3, NULL, 'Your rental is overdue. Please return the bike.', 'penalty');
+
+INSERT INTO pricing_plans (planType, price) VALUES
+  ('Hourly',  20.00),
+  ('Daily',   100.00),
+  ('Monthly', 800.00);
+
+INSERT INTO docks (stationID, bikeID, status) VALUES
+  (1, 1,    'occupied'),
+  (1, NULL, 'available'),
+  (1, NULL, 'out_of_service'),
+  (2, 2,    'occupied'),
+  (2, NULL, 'available');
