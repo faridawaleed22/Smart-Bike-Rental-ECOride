@@ -52,7 +52,11 @@ VALUES
     (2, 1, 'Fine - 100.00 EGP', 'Bike left unlocked after ending the rental session.'),
     (3, 3, 'Temporary Suspension (7 Days)', 'Repeated overdue rentals and unverified account status.');
 
-
+INSERT INTO rentals (riderID, bikeID, pricingID, startStationID, endStationID, startTime, endTime, usageDuration, status, totalCost)
+VALUES
+(1, 1, 2, 1, 2, '2026-11-01 09:00', '2026-11-01 11:30', 150, 'completed', 500.00),
+(2, 2, 1, 2, 3, '2026-11-02 14:00', '2026-11-02 15:00',  60, 'completed', 350.00),
+(3, 1, 1, 3, 1, '2026-11-03 10:00', '2026-11-03 12:00', 120, 'completed', 250.00);
   
 INSERT INTO payments (rentalID, amount, paymentstatus)
 VALUES
