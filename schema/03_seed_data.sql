@@ -25,3 +25,10 @@ INSERT INTO docks (stationID, bikeID, status) VALUES
   (1, NULL, 'out_of_service'),
   (2, 2,    'occupied'),
   (2, NULL, 'available');
+
+  
+INSERT INTO payments (rentalID, amount, paymentstatus)
+VALUES
+(1, 500.00, 'Completed'),
+(2, 350.00, 'Pending'),
+(3, 250.00, 'Failed');
