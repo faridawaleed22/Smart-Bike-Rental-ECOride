@@ -94,3 +94,52 @@ CREATE TABLE penalties (
     riderID INT REFERENCES riders(riderID),
     adminID INT REFERENCES admins(AdminID),
     accountAction VARCHAR(100),
+    reason TEXT
+);
+
+CREATE TABLE rentals (
+    rentalID         SERIAL PRIMARY KEY,
+    riderID          INT NOT NULL,
+    bikeID           INT NOT NULL,
+    pricingID        INT NOT NULL,
+    startStationID   INT NOT NULL,
+    endStationID     INT,
+    startTime        TIMESTAMP NOT NULL DEFAULT NOW(),
+    endTime          TIMESTAMP,
+    usageDuration    INT,
+    status           VARCHAR(20) NOT NULL DEFAULT 'active',
+    totalCost        DECIMAL(10,2),
+);
+CREATE TABLE payments (
+    paymentid SERIAL PRIMARY KEY,
+
+    rentalID INT NOT NULL,
+
+    amount DECIMAL(10,2) NOT NULL,
+
+    paymentstatus VARCHAR(50) NOT NULL,
+
+    paymenttime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (rentalID)
+        REFERENCES rentals(rentalID)
+        ON DELETE RESTRICT,
+
+    CHECK (amount >= 0),
+
+    CHECK (paymentstatus IN ('Pending', 'Completed', 'Failed', 'Refunded'))
+);
+
+
+CREATE TABLE issues (
+    issueID SERIAL PRIMARY KEY,
+    
+    riderID INT NOT NULL,
+    bikeID INT NOT NULL,
+    rentalID INT,
+    handledByAdminID INT,
+    
+    issueType VARCHAR(50) NOT NULL,
+    description TEXT,
+    status VARCHAR(20) NOT NULL DEFAULT 'open'
+);
