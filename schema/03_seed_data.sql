@@ -63,3 +63,25 @@ VALUES
 (1, 500.00, 'Completed'),
 (2, 350.00, 'Pending'),
 (3, 250.00, 'Failed');
+
+INSERT INTO issues (
+    riderID,
+    bikeID,
+    rentalID,
+    handledByAdminID,
+    issueType,
+    description,
+    status
+)
+VALUES
+    (1, 1, 1, 1, 'Damaged Bike',
+     'The rider reported that the bike brake is not working properly.',
+     'open'),
+
+    (2, 2, 2, 1, 'Payment Issue',
+     'The rider reported an incorrect charge after completing the rental.',
+     'in_progress'),
+
+    (3, 1, 3, NULL, 'Technical Issue',
+     'The bike QR code could not be scanned.',
+     'open');
