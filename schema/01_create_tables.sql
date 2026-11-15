@@ -74,7 +74,7 @@ CREATE TABLE rentals (
     endTime          TIMESTAMP,
     usageDuration    INT,
     status           VARCHAR(20) NOT NULL DEFAULT 'active',
-    totalCost        DECIMAL(10,2),
+    totalCost        DECIMAL(10,2)
 );
 
 CREATE TABLE payments (
