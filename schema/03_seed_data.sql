@@ -40,7 +40,7 @@ VALUES
 (2, 2, 1, 2, 3, '2026-11-02 14:00', '2026-11-02 15:00',  60, 'completed', 350.00),
 (3, 1, 1, 3, 1, '2026-11-03 10:00', '2026-11-03 12:00', 120, 'completed', 250.00);
 
-INSERT INTO payments (rentalID, amount, paymentstatus)
+INSERT INTO payments (rentalID, amount, paymentStatus)
 VALUES
 (1, 500.00, 'Completed'),
 (2, 350.00, 'Pending'),
@@ -60,6 +60,6 @@ VALUES
     (3, 3, 'Temporary Suspension (7 Days)', 'Repeated overdue rentals and unverified account status.');
 
 INSERT INTO notifications (riderID, rentalID, message, notificationType) VALUES
-(1, NULL, 'Your rental has started. Enjoy your ride!', 'rental'),
-(2, NULL, 'Your payment was processed successfully.', 'payment'),
-(3, NULL, 'Your rental is overdue. Please return the bike.', 'penalty');
+(1, 1, 'Your rental has started. Enjoy your ride!', 'rental'),
+(2, 2, 'Your payment was processed successfully.', 'payment'),
+(3, 3, 'Your rental is overdue. Please return the bike.', 'penalty');
